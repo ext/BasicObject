@@ -64,6 +64,12 @@ abstract class BasicObject {
 			}
 			$stmt->close();
 		}
+
+		/* return null if no primary key is defined */
+		if ( count($column_ids) == 0 ){
+			return null;
+		}
+
 		return $column_ids[$table_name];
 	}
 
